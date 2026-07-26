@@ -67,7 +67,7 @@ mutex.
 
 > This video shows an earlier software build using the same ESP32 and sensor configuration. The current repository contains the revised firmware, backend, telemetry features, and Grafana dashboard.
 
-[▶ Watch the early prototype demonstration](docs/library-desksense-early-prototype-demo.mp4)
+https://github.com/user-attachments/assets/dfe90d42-ad7a-401a-8f66-de14ce6d785b
 
 Pin assignments and thresholds can be changed in
 `components/application_code/application_code.c`.
