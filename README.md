@@ -63,6 +63,12 @@ mutex.
 |---|---|---|
 | ![ESP32 prototype on a breadboard](docs/images/esp32-prototype.jpg) | ![KY-038 sound-activity sensor](docs/images/ky038-sound-sensor.jpg) | ![PIR motion sensor](docs/images/pir-motion-sensor.jpg) |
 
+### Early prototype demonstration
+
+> This video shows an earlier software build using the same ESP32 and sensor configuration. The current repository contains the revised firmware, backend, telemetry features, and Grafana dashboard.
+
+[▶ Watch the early prototype demonstration](docs/library-desksense-early-prototype-demo.mp4)
+
 Pin assignments and thresholds can be changed in
 `components/application_code/application_code.c`.
 
