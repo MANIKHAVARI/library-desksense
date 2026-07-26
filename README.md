@@ -31,7 +31,7 @@ accuracy, and HTTP-versus-CoAP communication measurements.
 
 ## System architecture
 
-![LibraryDeskSense system architecture](docs/images/system-architecture.png)
+![LibraryDeskSense system architecture](docs/images/system-architecture-light.png)
 
 ## Firmware task architecture
 
@@ -39,7 +39,7 @@ The firmware separates occupancy, light, sound, telemetry, and event handling
 into FreeRTOS tasks that communicate through shared sensor data protected by a
 mutex.
 
-![LibraryDeskSense firmware task architecture](docs/images/firmware-task-architecture.png)
+![LibraryDeskSense firmware task architecture](docs/images/firmware-task-architecture-light.png)
 
 ## Hardware
 
