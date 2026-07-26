@@ -7,6 +7,14 @@ and a provisioned Grafana dashboard.
 
 The system detects activity without identifying users or recording audio.
 
+## Live dashboard
+
+The provisioned Grafana dashboard displays occupancy, completed-session
+duration, utilization, light and sound activity, recent events, forecast
+accuracy, and HTTP-versus-CoAP communication measurements.
+
+![LibraryDeskSense live Grafana dashboard](docs/images/grafana-dashboard.png)
+
 ## What it demonstrates
 
 - ESP-IDF firmware written in C with multiple FreeRTOS tasks
@@ -23,18 +31,15 @@ The system detects activity without identifying users or recording audio.
 
 ## System architecture
 
-```mermaid
-flowchart LR
-    PIR[PIR motion sensor] --> ESP[ESP32 firmware]
-    LDR[LDR light sensor] --> ESP
-    SOUND[KY-038 sound-activity sensor] --> ESP
+![LibraryDeskSense system architecture](docs/images/system-architecture.png)
 
-    ESP -->|HTTP or CoAP telemetry| PY[Python gateway]
-    ESP <-->|MQTT control and events| MQ[Mosquitto]
-    MQ --> PY
-    PY --> DB[InfluxDB]
-    DB --> GF[Grafana dashboard]
-```
+## Firmware task architecture
+
+The firmware separates occupancy, light, sound, telemetry, and event handling
+into FreeRTOS tasks that communicate through shared sensor data protected by a
+mutex.
+
+![LibraryDeskSense firmware task architecture](docs/images/firmware-task-architecture.png)
 
 ## Hardware
 
@@ -43,6 +48,12 @@ flowchart LR
 - KY-038 digital sound sensor connected to GPIO 32
 - LDR voltage-divider output connected to ADC1 channel 6
 - USB cable and a 2.4 GHz Wi-Fi network
+
+### Prototype hardware
+
+| ESP32 prototype | KY-038 sound-activity sensor | PIR motion sensor |
+|---|---|---|
+| ![ESP32 prototype on a breadboard](docs/images/esp32-prototype.jpg) | ![KY-038 sound-activity sensor](docs/images/ky038-sound-sensor.jpg) | ![PIR motion sensor](docs/images/pir-motion-sensor.jpg) |
 
 Pin assignments and thresholds can be changed in
 `components/application_code/application_code.c`.
@@ -134,7 +145,7 @@ python library_desksense.py
 On Windows, after setting the required InfluxDB environment variables, you can
 also run `START.bat`. The launcher starts services it can find locally and
 opens the Grafana dashboard. It does not terminate existing processes or
-contain machine-specific paths, network addresses, ports, or credentials.
+contain private network addresses, device-specific COM ports, or credentials.
 
 The gateway listens on:
 
