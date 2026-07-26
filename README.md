@@ -7,6 +7,10 @@ and a provisioned Grafana dashboard.
 
 The system detects activity without identifying users or recording audio.
 
+## Project context
+
+This project was independently developed as academic coursework using personally supplied hardware and computing resources.
+
 ## Live dashboard
 
 The provisioned Grafana dashboard displays occupancy, completed-session
