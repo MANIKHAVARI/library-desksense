@@ -51,6 +51,14 @@ mutex.
 
 ### Prototype hardware
 
+<p align="center">
+  <img src="docs/images/assembled-prototype.jpg"
+       alt="Assembled LibraryDeskSense ESP32 breadboard prototype"
+       width="760">
+</p>
+
+<p align="center"><em>Assembled LibraryDeskSense prototype with the ESP32 and connected sensors.</em></p>
+
 | ESP32 prototype | KY-038 sound-activity sensor | PIR motion sensor |
 |---|---|---|
 | ![ESP32 prototype on a breadboard](docs/images/esp32-prototype.jpg) | ![KY-038 sound-activity sensor](docs/images/ky038-sound-sensor.jpg) | ![PIR motion sensor](docs/images/pir-motion-sensor.jpg) |
