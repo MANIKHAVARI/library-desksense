@@ -1,0 +1,14 @@
+apiVersion: 1
+
+providers:
+  - name: LibraryDeskSense
+    orgId: 1
+    folder: LibraryDeskSense
+    folderUid: library-desksense-folder
+    type: file
+    disableDeletion: false
+    updateIntervalSeconds: 10
+    allowUiUpdates: true
+    options:
+      path: ${LIBRARY_DESKSENSE_DASHBOARDS}
+      foldersFromFilesStructure: false
